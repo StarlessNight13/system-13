@@ -1,0 +1,14 @@
+---
+layout: ../../layouts/ComponentDoc.astro
+slug: progress
+---
+import { Progress } from "../../../registry/system13/primitives"
+import PreviewSource from "../../components/docs/PreviewSource.astro"
+import Installation from "../../components/docs/Installation.astro"
+import ApiReference from "../../components/docs/ApiReference.astro"
+
+<PreviewSource code={'<Progress value={6} max={10} cells={10} />'}>
+  <Progress value={6} max={10} cells={10} />
+</PreviewSource>
+<Installation slug="progress" />
+<ApiReference slug="progress" />

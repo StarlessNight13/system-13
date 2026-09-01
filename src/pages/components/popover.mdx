@@ -1,0 +1,14 @@
+---
+layout: ../../layouts/ComponentDoc.astro
+slug: popover
+---
+import PopoverExample from "../../components/examples/PopoverExample"
+import PreviewSource from "../../components/docs/PreviewSource.astro"
+import Installation from "../../components/docs/Installation.astro"
+import ApiReference from "../../components/docs/ApiReference.astro"
+
+<PreviewSource code={'<Popover trigger={<Button>OPTIONS</Button>}>Contextual content.</Popover>'}>
+  <PopoverExample client:load />
+</PreviewSource>
+<Installation slug="popover" />
+<ApiReference slug="popover" />

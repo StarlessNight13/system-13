@@ -1,0 +1,14 @@
+---
+layout: ../../layouts/ComponentDoc.astro
+slug: tabs
+---
+import { Tabs } from "../../../registry/system13/tabs"
+import PreviewSource from "../../components/docs/PreviewSource.astro"
+import Installation from "../../components/docs/Installation.astro"
+import ApiReference from "../../components/docs/ApiReference.astro"
+
+<PreviewSource code={'<Tabs items={[{value: "preview", label: "PREVIEW"}, {value: "source", label: "SOURCE"}]} />'}>
+  <Tabs client:load items={[{value: "preview", label: "PREVIEW"}, {value: "source", label: "SOURCE"}]} />
+</PreviewSource>
+<Installation slug="tabs" />
+<ApiReference slug="tabs" />

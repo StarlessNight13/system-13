@@ -1,0 +1,14 @@
+---
+layout: ../../layouts/ComponentDoc.astro
+slug: notification
+---
+import { Notification } from "../../../registry/system13/notification"
+import PreviewSource from "../../components/docs/PreviewSource.astro"
+import Installation from "../../components/docs/Installation.astro"
+import ApiReference from "../../components/docs/ApiReference.astro"
+
+<PreviewSource code={'<Notification status="SUCCESS" tone="success">Saved.</Notification>'}>
+  <Notification status="SUCCESS" tone="success">Saved.</Notification>
+</PreviewSource>
+<Installation slug="notification" />
+<ApiReference slug="notification" />

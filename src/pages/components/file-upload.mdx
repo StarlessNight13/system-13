@@ -1,0 +1,14 @@
+---
+layout: ../../layouts/ComponentDoc.astro
+slug: file-upload
+---
+import { FileUpload } from "../../../registry/system13/file-upload"
+import PreviewSource from "../../components/docs/PreviewSource.astro"
+import Installation from "../../components/docs/Installation.astro"
+import ApiReference from "../../components/docs/ApiReference.astro"
+
+<PreviewSource code={'<FileUpload label="Upload source" onFiles={handleFiles} />'}>
+  <FileUpload client:load label="Upload source" hint="or click to browse" />
+</PreviewSource>
+<Installation slug="file-upload" />
+<ApiReference slug="file-upload" />

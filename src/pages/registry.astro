@@ -1,0 +1,20 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro"
+---
+
+<DocsLayout current="Registry">
+  <header class="hero">
+    <div class="eyebrow">DESIGN SYSTEM / REGISTRY</div>
+    <h1>Registry</h1>
+    <p>Install System 13 source files into any shadcn-compatible project.</p>
+  </header>
+  <section class="doc-section">
+    <h2>Install the base</h2>
+    <pre class="doc-code"><code>npx shadcn@latest add StarlessNight13/system-13/system-13</code></pre>
+  </section>
+  <section class="doc-section">
+    <h2>Build locally</h2>
+    <p>The registry payload is generated from <code>registry.json</code> and written to <code>public/r</code>.</p>
+    <pre class="doc-code"><code>bun run build:registry</code></pre>
+  </section>
+</DocsLayout>

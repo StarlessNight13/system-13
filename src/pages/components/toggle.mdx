@@ -1,0 +1,14 @@
+---
+layout: ../../layouts/ComponentDoc.astro
+slug: toggle
+---
+import { Toggle } from "../../../registry/system13/toggle"
+import PreviewSource from "../../components/docs/PreviewSource.astro"
+import Installation from "../../components/docs/Installation.astro"
+import ApiReference from "../../components/docs/ApiReference.astro"
+
+<PreviewSource code={'<Toggle defaultPressed />'}>
+  <Toggle client:load defaultPressed />
+</PreviewSource>
+<Installation slug="toggle" />
+<ApiReference slug="toggle" />

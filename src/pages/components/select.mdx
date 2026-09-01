@@ -1,0 +1,14 @@
+---
+layout: ../../layouts/ComponentDoc.astro
+slug: select
+---
+import { Select } from "../../../registry/system13/select"
+import PreviewSource from "../../components/docs/PreviewSource.astro"
+import Installation from "../../components/docs/Installation.astro"
+import ApiReference from "../../components/docs/ApiReference.astro"
+
+<PreviewSource code={'<Select label="Mode" options={[{value: "stable", label: "Stable"}]} />'}>
+  <Select client:load label="Mode" options={[{value: "stable", label: "Stable"}, {value: "preview", label: "Preview"}]} />
+</PreviewSource>
+<Installation slug="select" />
+<ApiReference slug="select" />

@@ -1,0 +1,50 @@
+---
+import { components } from "../data/components"
+import RegistryStyles from "../components/docs/RegistryStyles.astro"
+import "../styles/globals.css"
+
+interface Props {
+  current?: "Overview" | "Components" | "Tokens" | "Registry"
+  componentSlug?: string
+  title?: string
+}
+
+const { current, componentSlug, title } = Astro.props
+const pathname = Astro.url.pathname
+const showComponentNav = current === "Components"
+const pageTitle = title ?? current ?? "System 13"
+const pageIsActive = (href: string) => href === "/" ? pathname === "/" : pathname.startsWith(href)
+const pageNav = [
+  ["Overview", "/"],
+  ["Components", "/components/"],
+  ["Tokens", "/tokens/"],
+  ["Registry", "/registry/"],
+] as const
+---
+
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="A TUI-inspired design system and shadcn registry." />
+    <title>{pageTitle === "System 13" ? pageTitle : `${pageTitle} · System 13`}</title>
+  </head>
+  <body>
+    <RegistryStyles />
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="/">SYSTEM / 13</a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          {pageNav.map(([label, href]) => <a class="s13-menu-item" href={href} aria-current={pageIsActive(href) ? "page" : undefined}><span class="s13-menu-item__marker" aria-hidden="true"></span><span>{label}</span></a>)}
+        </nav>
+      </header>
+      <div class:list={["site-content", { "components-content": showComponentNav }]}>
+        {showComponentNav && <aside class="component-nav" aria-label="Components navigation">
+          <div class="component-nav__label">COMPONENTS</div>
+          {components.map(component => <a class="s13-menu-item" href={`/components/${component.slug}/`} aria-current={component.slug === componentSlug ? "page" : undefined}><span class="s13-menu-item__marker" aria-hidden="true"></span><span>{component.name.toUpperCase()}</span></a>)}
+        </aside>}
+        <main class="site-main"><slot /></main>
+      </div>
+    </div>
+  </body>
+</html>

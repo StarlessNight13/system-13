@@ -1,0 +1,22 @@
+---
+import { getComponent } from "../../data/components"
+
+interface Props {
+  slug: string
+}
+
+const doc = getComponent(Astro.props.slug)
+if (!doc) throw new Error(`Unknown component: ${Astro.props.slug}`)
+
+const command = `npx shadcn@latest add StarlessNight13/system-13/${doc.registryItem}`
+const importStatement = `import { ${doc.exportName} } from "${doc.importPath}"`
+---
+
+<section class="doc-section">
+  <h2>Installation</h2>
+  <h3>CLI</h3>
+  <pre class="doc-code"><code>{command}</code></pre>
+  <h3>Manual</h3>
+  <p>Copy <code>{doc.source}</code> into your project, then import the component:</p>
+  <pre class="doc-code"><code>{importStatement}</code></pre>
+</section>

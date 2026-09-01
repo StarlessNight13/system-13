@@ -1,0 +1,14 @@
+---
+layout: ../../layouts/ComponentDoc.astro
+slug: accordion
+---
+import { Accordion } from "../../../registry/system13/accordion"
+import PreviewSource from "../../components/docs/PreviewSource.astro"
+import Installation from "../../components/docs/Installation.astro"
+import ApiReference from "../../components/docs/ApiReference.astro"
+
+<PreviewSource code={'<Accordion items={[{id: "general", title: "GENERAL", content: "..."}]} />'}>
+  <Accordion client:load defaultOpen="general" items={[{id: "general", title: "GENERAL", content: "General configuration."}, {id: "appearance", title: "APPEARANCE", content: "Theme preferences."}]} />
+</PreviewSource>
+<Installation slug="accordion" />
+<ApiReference slug="accordion" />

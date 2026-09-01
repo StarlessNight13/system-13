@@ -1,0 +1,14 @@
+---
+layout: ../../layouts/ComponentDoc.astro
+slug: command-list
+---
+import { CommandList } from "../../../registry/system13/command-list"
+import PreviewSource from "../../components/docs/PreviewSource.astro"
+import Installation from "../../components/docs/Installation.astro"
+import ApiReference from "../../components/docs/ApiReference.astro"
+
+<PreviewSource code={'<CommandList items={[{id: "open", label: "Open", shortcut: "ENTER"}]} />'}>
+  <CommandList client:load items={[{id: "open", label: "Open component", shortcut: "ENTER"}, {id: "copy", label: "Copy command", shortcut: "C"}]} />
+</PreviewSource>
+<Installation slug="command-list" />
+<ApiReference slug="command-list" />

@@ -1,0 +1,26 @@
+---
+layout: ../../layouts/ComponentDoc.astro
+slug: button
+---
+import { Button } from "../../../registry/system13/button"
+import PreviewSource from "../../components/docs/PreviewSource.astro"
+import Installation from "../../components/docs/Installation.astro"
+import ApiReference from "../../components/docs/ApiReference.astro"
+
+<PreviewSource code={`<Button variant="default">DEFAULT</Button>
+<Button variant="outline">OUTLINE</Button>
+<Button variant="ghost">GHOST</Button>
+<Button variant="link">LINK</Button>
+<Button color="secondary">SECONDARY</Button>
+<Button color="destructive">DESTRUCTIVE</Button>`}>
+  <div className="button-variants-preview">
+    <Button variant="default">DEFAULT</Button>
+    <Button variant="outline">OUTLINE</Button>
+    <Button variant="ghost">GHOST</Button>
+    <Button variant="link">LINK</Button>
+    <Button color="secondary">SECONDARY</Button>
+    <Button color="destructive">DESTRUCTIVE</Button>
+  </div>
+</PreviewSource>
+<Installation slug="button" />
+<ApiReference slug="button" />

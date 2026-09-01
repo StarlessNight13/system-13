@@ -1,0 +1,14 @@
+---
+layout: ../../layouts/ComponentDoc.astro
+slug: code-block
+---
+import { CodeBlock } from "../../../registry/system13/primitives"
+import PreviewSource from "../../components/docs/PreviewSource.astro"
+import Installation from "../../components/docs/Installation.astro"
+import ApiReference from "../../components/docs/ApiReference.astro"
+
+<PreviewSource code={'<CodeBlock language="TSX"><Button>SAVE</Button></CodeBlock>'}>
+  <CodeBlock language="TSX" filename="button.tsx">{`<Button>SAVE</Button>`}</CodeBlock>
+</PreviewSource>
+<Installation slug="code-block" />
+<ApiReference slug="code-block" />

@@ -1,0 +1,17 @@
+---
+layout: ../../layouts/ComponentDoc.astro
+slug: button-group
+---
+import { Button, ButtonGroup } from "../../../registry/system13/button"
+import PreviewSource from "../../components/docs/PreviewSource.astro"
+import Installation from "../../components/docs/Installation.astro"
+import ApiReference from "../../components/docs/ApiReference.astro"
+
+<PreviewSource code={'<ButtonGroup><Button>PREV</Button><Button variant="default">NEXT</Button></ButtonGroup>'}>
+  <ButtonGroup aria-label="Pagination actions">
+    <Button size="sm">PREV</Button>
+    <Button variant="default" size="sm">NEXT</Button>
+  </ButtonGroup>
+</PreviewSource>
+<Installation slug="button-group" />
+<ApiReference slug="button-group" />

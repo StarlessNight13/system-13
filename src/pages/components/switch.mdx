@@ -1,0 +1,14 @@
+---
+layout: ../../layouts/ComponentDoc.astro
+slug: switch
+---
+import { Switch } from "../../../registry/system13/switch"
+import PreviewSource from "../../components/docs/PreviewSource.astro"
+import Installation from "../../components/docs/Installation.astro"
+import ApiReference from "../../components/docs/ApiReference.astro"
+
+<PreviewSource code={'<Switch defaultChecked label="Enabled" />'}>
+  <Switch client:load defaultChecked label="Enabled" />
+</PreviewSource>
+<Installation slug="switch" />
+<ApiReference slug="switch" />

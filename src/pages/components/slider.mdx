@@ -1,0 +1,14 @@
+---
+layout: ../../layouts/ComponentDoc.astro
+slug: slider
+---
+import { Slider } from "../../../registry/system13/slider"
+import PreviewSource from "../../components/docs/PreviewSource.astro"
+import Installation from "../../components/docs/Installation.astro"
+import ApiReference from "../../components/docs/ApiReference.astro"
+
+<PreviewSource code={'<Slider defaultValue={62} min={0} max={100} />'}>
+  <Slider client:load defaultValue={62} min={0} max={100} />
+</PreviewSource>
+<Installation slug="slider" />
+<ApiReference slug="slider" />

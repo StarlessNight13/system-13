@@ -1,0 +1,26 @@
+---
+import { getComponent } from "../data/components"
+import DocsLayout from "./DocsLayout.astro"
+
+const { frontmatter } = Astro.props
+const doc = getComponent(frontmatter.slug)
+if (!doc) throw new Error(`Unknown component: ${frontmatter.slug}`)
+---
+
+<DocsLayout current="Components" componentSlug={doc.slug} title={doc.name}>
+  <header class="doc-header">
+    <div class="eyebrow">COMPONENT / {doc.name.toUpperCase()}</div>
+    <h1>{doc.name}</h1>
+    <p>{doc.description}</p>
+    <div class="doc-meta">
+      <span>SOURCE <code>{doc.source}</code></span>
+      <span>DEPENDENCIES <code>{doc.dependencies.join(", ")}</code></span>
+      <span>REGISTRY <code>{doc.registryItem}</code></span>
+    </div>
+  </header>
+  <slot />
+  <footer class="doc-footer">
+    <a href="/components/">← ALL COMPONENTS</a>
+    <a href={`https://github.com/StarlessNight13/system-13/blob/main/${doc.source}`}>VIEW SOURCE ↗</a>
+  </footer>
+</DocsLayout>

@@ -1,0 +1,14 @@
+---
+layout: ../../layouts/ComponentDoc.astro
+slug: pagination
+---
+import { Pagination } from "../../../registry/system13/primitives"
+import PreviewSource from "../../components/docs/PreviewSource.astro"
+import Installation from "../../components/docs/Installation.astro"
+import ApiReference from "../../components/docs/ApiReference.astro"
+
+<PreviewSource code={'<Pagination current={2} total={12} />'}>
+  <Pagination current={2} total={12} />
+</PreviewSource>
+<Installation slug="pagination" />
+<ApiReference slug="pagination" />

@@ -3,24 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "shadcn build && next build",
+    "dev": "astro dev",
+    "build": "shadcn build && astro build",
     "build:registry": "shadcn build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "astro preview",
+    "lint": "astro check"
   },
   "dependencies": {
-    "next": "latest",
     "react": "latest",
     "react-dom": "latest"
   },
   "devDependencies": {
+    "@astrojs/check": "latest",
+    "@astrojs/mdx": "latest",
+    "@astrojs/react": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "astro": "latest",
     "shadcn": "latest",
-    "tailwindcss": "latest",
-    "@tailwindcss/postcss": "latest",
-    "typescript": "latest"
+    "typescript": "^6.0.0"
   }
 }

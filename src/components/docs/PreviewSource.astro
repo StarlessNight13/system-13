@@ -1,0 +1,35 @@
+---
+interface Props {
+  code: string
+}
+
+const { code } = Astro.props
+---
+
+<section class="doc-section">
+  <h2>Preview</h2>
+  <div class="preview-source" data-preview-source>
+    <div class="preview-source__tabs" role="tablist" aria-label="Preview and source">
+      <button class="preview-source__tab" type="button" role="tab" aria-selected="true" data-tab="preview">PREVIEW</button>
+      <button class="preview-source__tab" type="button" role="tab" aria-selected="false" data-tab="source">SOURCE</button>
+    </div>
+    <div class="preview-source__panel" role="tabpanel" data-panel="preview">
+      <div class="preview-source__preview"><slot /></div>
+    </div>
+    <div class="preview-source__panel" role="tabpanel" data-panel="source" hidden>
+      <pre class="preview-source__code"><code>{code}</code></pre>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>("[data-preview-source]").forEach(root => {
+    const tabs = root.querySelectorAll<HTMLButtonElement>("[data-tab]")
+    const panels = root.querySelectorAll<HTMLElement>("[data-panel]")
+    tabs.forEach(tab => tab.addEventListener("click", () => {
+      const selected = tab.dataset.tab
+      tabs.forEach(item => item.setAttribute("aria-selected", String(item === tab)))
+      panels.forEach(panel => { panel.hidden = panel.dataset.panel !== selected })
+    }))
+  })
+</script>

@@ -1,0 +1,14 @@
+---
+layout: ../../layouts/ComponentDoc.astro
+slug: breadcrumbs
+---
+import { Breadcrumbs } from "../../../registry/system13/primitives"
+import PreviewSource from "../../components/docs/PreviewSource.astro"
+import Installation from "../../components/docs/Installation.astro"
+import ApiReference from "../../components/docs/ApiReference.astro"
+
+<PreviewSource code={'<Breadcrumbs items={[{label: "ROOT", href: "/"}, {label: "BUTTON"}]} />'}>
+  <Breadcrumbs items={[{label: "ROOT", href: "/"}, {label: "BUTTON"}]} />
+</PreviewSource>
+<Installation slug="breadcrumbs" />
+<ApiReference slug="breadcrumbs" />

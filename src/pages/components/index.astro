@@ -1,0 +1,22 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro"
+import { components } from "../../data/components"
+---
+
+<DocsLayout current="Components">
+  <header class="hero">
+    <div class="eyebrow">DESIGN SYSTEM / COMPONENTS</div>
+    <h1>Components</h1>
+    <p>Choose a component from the sidebar or browse the complete catalog. Every page includes a preview, source, installation, and API reference.</p>
+  </header>
+  <section class="doc-section">
+    <h2>Component catalog</h2>
+    <div class="catalog-grid">
+      {components.map(component => <a class="catalog-card" href={`/components/${component.slug}/`}>
+        <h2>{component.name}</h2>
+        <p>{component.description}</p>
+        <small>VIEW {component.name.toUpperCase()} →</small>
+      </a>)}
+    </div>
+  </section>
+</DocsLayout>

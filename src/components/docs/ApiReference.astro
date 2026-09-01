@@ -1,0 +1,32 @@
+---
+import { getComponent } from "../../data/components"
+
+interface Props {
+  slug: string
+}
+
+const doc = getComponent(Astro.props.slug)
+if (!doc) throw new Error(`Unknown component: ${Astro.props.slug}`)
+
+const tables = [
+  ["Attributes", doc.attributes],
+  ["Variants", doc.variants],
+  ["Sizes", doc.sizes],
+] as const
+---
+
+<section class="doc-section">
+  <h2>API reference</h2>
+  {tables.map(([title, rows]) => <div class="api-group">
+    <h3>{title}</h3>
+    <table class="api-table">
+      <thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead>
+      <tbody>{rows.map(row => <tr><td><code>{row[0]}</code></td><td><code>{row[1]}</code></td><td>{row[2]}</td></tr>)}</tbody>
+    </table>
+  </div>)}
+  <div class="api-group">
+    <h3>Composition API</h3>
+    <p>{doc.composition}</p>
+    <pre class="doc-code"><code>{doc.example}</code></pre>
+  </div>
+</section>

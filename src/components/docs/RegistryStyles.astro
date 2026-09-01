@@ -1,0 +1,25 @@
+---
+import { buttonStyles } from "../../../registry/system13/button"
+import { inputStyles } from "../../../registry/system13/input"
+import { toggleStyles } from "../../../registry/system13/toggle"
+import { switchStyles } from "../../../registry/system13/switch"
+import { menuItemStyles } from "../../../registry/system13/menu-item"
+import { primitivesStyles } from "../../../registry/system13/primitives"
+import { tabsStyles } from "../../../registry/system13/tabs"
+import { textareaStyles } from "../../../registry/system13/textarea"
+import { checkboxStyles } from "../../../registry/system13/checkbox"
+import { radioStyles } from "../../../registry/system13/radio"
+import { selectStyles } from "../../../registry/system13/select"
+import { notificationStyles } from "../../../registry/system13/notification"
+import { tableStyles } from "../../../registry/system13/table"
+import { sliderStyles } from "../../../registry/system13/slider"
+import { skeletonStyles } from "../../../registry/system13/skeleton"
+import { accordionStyles } from "../../../registry/system13/accordion"
+import { commandListStyles } from "../../../registry/system13/command-list"
+import { popoverStyles } from "../../../registry/system13/popover"
+import { fileUploadStyles } from "../../../registry/system13/file-upload"
+
+const styles = [buttonStyles, inputStyles, toggleStyles, switchStyles, menuItemStyles, primitivesStyles, tabsStyles, textareaStyles, checkboxStyles, radioStyles, selectStyles, notificationStyles, tableStyles, sliderStyles, skeletonStyles, accordionStyles, commandListStyles, popoverStyles, fileUploadStyles].join("\n")
+---
+
+<style is:global set:html={styles}></style>

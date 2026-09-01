@@ -1,0 +1,14 @@
+---
+layout: ../../layouts/ComponentDoc.astro
+slug: radio
+---
+import { RadioGroup } from "../../../registry/system13/radio"
+import PreviewSource from "../../components/docs/PreviewSource.astro"
+import Installation from "../../components/docs/Installation.astro"
+import ApiReference from "../../components/docs/ApiReference.astro"
+
+<PreviewSource code={'<RadioGroup name="Mode" options={[{value: "a", label: "ALPHA"}]} />'}>
+  <RadioGroup client:load name="Mode" options={[{value: "a", label: "ALPHA"}, {value: "b", label: "BETA"}]} defaultValue="a" />
+</PreviewSource>
+<Installation slug="radio" />
+<ApiReference slug="radio" />

@@ -1,0 +1,17 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro"
+---
+
+<DocsLayout current="Tokens">
+  <header class="hero">
+    <div class="eyebrow">DESIGN SYSTEM / TOKENS</div>
+    <h1>Tokens</h1>
+    <p>The structural values shared across every System 13 component.</p>
+  </header>
+  <section class="doc-section">
+    <h2>Core variables</h2>
+    <div class="api-tags">
+      {['--s13-background', '--s13-surface', '--s13-foreground', '--s13-muted', '--s13-border', '--s13-accent', '--s13-accent-soft', '--s13-danger', '--s13-warning', '--s13-success', '--s13-radius', '--s13-transition', '--s13-font-mono'].map(variable => <code class="api-tag">{variable}</code>)}
+    </div>
+  </section>
+</DocsLayout>

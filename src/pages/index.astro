@@ -1,0 +1,27 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro"
+import { components } from "../data/components"
+---
+
+<DocsLayout current="Overview">
+  <header class="hero">
+    <div class="eyebrow">SYSTEM / 13</div>
+    <h1>System 13</h1>
+    <p>A TUI-inspired React design system documented as focused Astro and MDX pages. Structure communicates state through borders, rails, cells, square markers, and restrained accent states.</p>
+  </header>
+  <section class="doc-section">
+    <h2>Built for composition</h2>
+    <div class="catalog-grid">
+      <a class="catalog-card" href="/components/">
+        <h2>{components.length} documented components</h2>
+        <p>Each component has a live preview, source tab, installation instructions, attributes, variables, variants, and composition notes.</p>
+        <small>OPEN COMPONENTS →</small>
+      </a>
+      <a class="catalog-card" href="/registry/">
+        <h2>shadcn-compatible registry</h2>
+        <p>Install the source directly into a project with the existing public registry catalog.</p>
+        <small>VIEW REGISTRY →</small>
+      </a>
+    </div>
+  </section>
+</DocsLayout>

@@ -1,0 +1,14 @@
+---
+layout: ../../layouts/ComponentDoc.astro
+slug: table
+---
+import { Table } from "../../../registry/system13/table"
+import PreviewSource from "../../components/docs/PreviewSource.astro"
+import Installation from "../../components/docs/Installation.astro"
+import ApiReference from "../../components/docs/ApiReference.astro"
+
+<PreviewSource code={'<Table columns={["NAME", "STATE"]} rows={[["Button", "ACTIVE"]]} />'}>
+  <Table columns={["NAME", "STATE"]} rows={[["Button", "ACTIVE"], ["Input", "DRAFT"]]} />
+</PreviewSource>
+<Installation slug="table" />
+<ApiReference slug="table" />

@@ -1,0 +1,14 @@
+---
+layout: ../../layouts/ComponentDoc.astro
+slug: status
+---
+import { Status } from "../../../registry/system13/primitives"
+import PreviewSource from "../../components/docs/PreviewSource.astro"
+import Installation from "../../components/docs/Installation.astro"
+import ApiReference from "../../components/docs/ApiReference.astro"
+
+<PreviewSource code={'<Status tone="success">READY</Status>'}>
+  <Status tone="success">READY</Status>
+</PreviewSource>
+<Installation slug="status" />
+<ApiReference slug="status" />

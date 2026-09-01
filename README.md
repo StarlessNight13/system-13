@@ -7,7 +7,9 @@ System 13 is a TUI-inspired web design system and shadcn-compatible code registr
 - `SKILL.md` — canonical visual and interaction rules for System 13
 - `registry.json` — shadcn source registry catalog
 - `registry/system13/` — canonical component source and theme CSS
-- `app/` — Next.js showcase site
+- `src/pages/` — Astro site pages and one MDX page per component
+- `src/components/docs/` — shared documentation UI
+- `src/data/components.ts` — component catalog and API metadata
 
 ## Initial components
 
@@ -20,14 +22,16 @@ System 13 is a TUI-inspired web design system and shadcn-compatible code registr
 ## Develop
 
 ```bash
-npm install
-npm run dev
+bun install
+bun run dev
 ```
+
+Component documentation is available at `/components/`. Each MDX page includes a live preview, source tab, installation command, attributes, variables, variants, sizes, and composition reference.
 
 Build the static registry payloads used by the showcase site:
 
 ```bash
-npm run build:registry
+bun run build:registry
 ```
 
 Shadcn writes generated items to `public/r`.
