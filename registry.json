@@ -9,18 +9,7 @@
       "title": "System 13",
       "description": "TUI-inspired System 13 design system base.",
       "extends": "none",
-      "config": {
-        "style": "system-13",
-        "tsx": true,
-        "rsc": true,
-        "tailwind": { "baseColor": "zinc" },
-        "aliases": {
-          "components": "@/components",
-          "ui": "@/components/ui",
-          "lib": "@/lib",
-          "hooks": "@/hooks"
-        }
-      },
+      "config": { "style": "system-13", "tsx": true, "rsc": true, "tailwind": { "baseColor": "zinc" }, "aliases": { "components": "@/components", "ui": "@/components/ui", "lib": "@/lib", "hooks": "@/hooks" } },
       "files": [
         { "path": "registry/system13/system13.css", "type": "registry:file", "target": "~/app/system13.css" },
         { "path": "registry/system13/button.tsx", "type": "registry:ui", "target": "@ui/system13-button.tsx" },
@@ -28,65 +17,51 @@
         { "path": "registry/system13/toggle.tsx", "type": "registry:ui", "target": "@ui/system13-toggle.tsx" },
         { "path": "registry/system13/switch.tsx", "type": "registry:ui", "target": "@ui/system13-switch.tsx" },
         { "path": "registry/system13/menu-item.tsx", "type": "registry:ui", "target": "@ui/system13-menu-item.tsx" },
-        { "path": "registry/system13/primitives.tsx", "type": "registry:ui", "target": "@ui/system13-primitives.tsx" }
+        { "path": "registry/system13/primitives.tsx", "type": "registry:ui", "target": "@ui/system13-primitives.tsx" },
+        { "path": "registry/system13/tabs.tsx", "type": "registry:ui", "target": "@ui/system13-tabs.tsx" },
+        { "path": "registry/system13/textarea.tsx", "type": "registry:ui", "target": "@ui/system13-textarea.tsx" },
+        { "path": "registry/system13/checkbox.tsx", "type": "registry:ui", "target": "@ui/system13-checkbox.tsx" },
+        { "path": "registry/system13/radio.tsx", "type": "registry:ui", "target": "@ui/system13-radio.tsx" },
+        { "path": "registry/system13/select.tsx", "type": "registry:ui", "target": "@ui/system13-select.tsx" },
+        { "path": "registry/system13/notification.tsx", "type": "registry:ui", "target": "@ui/system13-notification.tsx" },
+        { "path": "registry/system13/table.tsx", "type": "registry:ui", "target": "@ui/system13-table.tsx" },
+        { "path": "registry/system13/slider.tsx", "type": "registry:ui", "target": "@ui/system13-slider.tsx" },
+        { "path": "registry/system13/skeleton.tsx", "type": "registry:ui", "target": "@ui/system13-skeleton.tsx" },
+        { "path": "registry/system13/accordion.tsx", "type": "registry:ui", "target": "@ui/system13-accordion.tsx" },
+        { "path": "registry/system13/command-list.tsx", "type": "registry:ui", "target": "@ui/system13-command-list.tsx" },
+        { "path": "registry/system13/popover.tsx", "type": "registry:ui", "target": "@ui/system13-popover.tsx" },
+        { "path": "registry/system13/file-upload.tsx", "type": "registry:ui", "target": "@ui/system13-file-upload.tsx" }
       ],
-      "docs": "Import ./system13.css from your app stylesheet or root layout after installation. Canonical design decisions are documented in docs/canonical-components.md."
+      "docs": "Import ./system13.css after installation. Canonical decisions are documented in docs/canonical-components.md."
     },
+    { "name": "system-13-style", "type": "registry:style", "title": "System 13 Style", "description": "Core tokens and structural CSS.", "files": [{ "path": "registry/system13/system13.css", "type": "registry:file", "target": "~/app/system13.css" }] },
+    { "name": "system-13-button", "type": "registry:ui", "title": "Button", "description": "Bracket-border action button.", "registryDependencies": ["StarlessNight13/system-13/system-13-style"], "files": [{ "path": "registry/system13/button.tsx", "type": "registry:ui", "target": "@ui/system13-button.tsx" }] },
+    { "name": "system-13-input", "type": "registry:ui", "title": "Input", "description": "Square floating-label input.", "registryDependencies": ["StarlessNight13/system-13/system-13-style"], "files": [{ "path": "registry/system13/input.tsx", "type": "registry:ui", "target": "@ui/system13-input.tsx" }] },
+    { "name": "system-13-toggle", "type": "registry:ui", "title": "Toggle", "description": "Bracket ON/OFF control.", "registryDependencies": ["StarlessNight13/system-13/system-13-style"], "files": [{ "path": "registry/system13/toggle.tsx", "type": "registry:ui", "target": "@ui/system13-toggle.tsx" }] },
+    { "name": "system-13-switch", "type": "registry:ui", "title": "Switch", "description": "Cursor-rail switch.", "registryDependencies": ["StarlessNight13/system-13/system-13-style"], "files": [{ "path": "registry/system13/switch.tsx", "type": "registry:ui", "target": "@ui/system13-switch.tsx" }] },
+    { "name": "system-13-menu-item", "type": "registry:ui", "title": "Menu Item", "description": "Navigation row with square marker.", "registryDependencies": ["StarlessNight13/system-13/system-13-style"], "files": [{ "path": "registry/system13/menu-item.tsx", "type": "registry:ui", "target": "@ui/system13-menu-item.tsx" }] },
+    { "name": "system-13-primitives", "type": "registry:ui", "title": "Structural Primitives", "description": "Panels, card, status, pagination, breadcrumbs, alerts, code, progress, avatar, KBD, spinner and empty state.", "registryDependencies": ["StarlessNight13/system-13/system-13-style"], "files": [{ "path": "registry/system13/primitives.tsx", "type": "registry:ui", "target": "@ui/system13-primitives.tsx" }] },
     {
-      "name": "system-13-style",
-      "type": "registry:style",
-      "title": "System 13 Style",
-      "description": "Core tokens and structural CSS for System 13 components.",
-      "files": [{ "path": "registry/system13/system13.css", "type": "registry:file", "target": "~/app/system13.css" }],
-      "docs": "Import ./system13.css from your app stylesheet or root layout after installation."
-    },
-    {
-      "name": "system-13-button",
+      "name": "system-13-components",
       "type": "registry:ui",
-      "title": "Button",
-      "description": "Bracket-border System 13 action button.",
-      "registryDependencies": ["StarlessNight13/system-13/system-13-style"],
-      "files": [{ "path": "registry/system13/button.tsx", "type": "registry:ui", "target": "@ui/system13-button.tsx" }]
-    },
-    {
-      "name": "system-13-input",
-      "type": "registry:ui",
-      "title": "Input",
-      "description": "Square floating-label System 13 input.",
-      "registryDependencies": ["StarlessNight13/system-13/system-13-style"],
-      "files": [{ "path": "registry/system13/input.tsx", "type": "registry:ui", "target": "@ui/system13-input.tsx" }]
-    },
-    {
-      "name": "system-13-toggle",
-      "type": "registry:ui",
-      "title": "Toggle",
-      "description": "Bracket-border ON/OFF control.",
-      "registryDependencies": ["StarlessNight13/system-13/system-13-style"],
-      "files": [{ "path": "registry/system13/toggle.tsx", "type": "registry:ui", "target": "@ui/system13-toggle.tsx" }]
-    },
-    {
-      "name": "system-13-switch",
-      "type": "registry:ui",
-      "title": "Switch",
-      "description": "Terminal rail switch with a moving block cursor.",
-      "registryDependencies": ["StarlessNight13/system-13/system-13-style"],
-      "files": [{ "path": "registry/system13/switch.tsx", "type": "registry:ui", "target": "@ui/system13-switch.tsx" }]
-    },
-    {
-      "name": "system-13-menu-item",
-      "type": "registry:ui",
-      "title": "Menu Item",
-      "description": "Navigation row with a square selection marker.",
-      "registryDependencies": ["StarlessNight13/system-13/system-13-style"],
-      "files": [{ "path": "registry/system13/menu-item.tsx", "type": "registry:ui", "target": "@ui/system13-menu-item.tsx" }]
-    },
-    {
-      "name": "system-13-primitives",
-      "type": "registry:ui",
-      "title": "System 13 Primitives",
-      "description": "Canonical System 13 structural primitives including panels, cards, status, pagination, breadcrumbs, alerts, code blocks, spinner, progress, avatar, KBD, and empty state.",
-      "registryDependencies": ["StarlessNight13/system-13/system-13-style"],
-      "files": [{ "path": "registry/system13/primitives.tsx", "type": "registry:ui", "target": "@ui/system13-primitives.tsx" }]
+      "title": "System 13 Components",
+      "description": "The finalized interactive System 13 component set from the initial design pass.",
+      "registryDependencies": ["StarlessNight13/system-13/system-13-style", "StarlessNight13/system-13/system-13-primitives"],
+      "files": [
+        { "path": "registry/system13/tabs.tsx", "type": "registry:ui", "target": "@ui/system13-tabs.tsx" },
+        { "path": "registry/system13/textarea.tsx", "type": "registry:ui", "target": "@ui/system13-textarea.tsx" },
+        { "path": "registry/system13/checkbox.tsx", "type": "registry:ui", "target": "@ui/system13-checkbox.tsx" },
+        { "path": "registry/system13/radio.tsx", "type": "registry:ui", "target": "@ui/system13-radio.tsx" },
+        { "path": "registry/system13/select.tsx", "type": "registry:ui", "target": "@ui/system13-select.tsx" },
+        { "path": "registry/system13/notification.tsx", "type": "registry:ui", "target": "@ui/system13-notification.tsx" },
+        { "path": "registry/system13/table.tsx", "type": "registry:ui", "target": "@ui/system13-table.tsx" },
+        { "path": "registry/system13/slider.tsx", "type": "registry:ui", "target": "@ui/system13-slider.tsx" },
+        { "path": "registry/system13/skeleton.tsx", "type": "registry:ui", "target": "@ui/system13-skeleton.tsx" },
+        { "path": "registry/system13/accordion.tsx", "type": "registry:ui", "target": "@ui/system13-accordion.tsx" },
+        { "path": "registry/system13/command-list.tsx", "type": "registry:ui", "target": "@ui/system13-command-list.tsx" },
+        { "path": "registry/system13/popover.tsx", "type": "registry:ui", "target": "@ui/system13-popover.tsx" },
+        { "path": "registry/system13/file-upload.tsx", "type": "registry:ui", "target": "@ui/system13-file-upload.tsx" }
+      ]
     }
   ]
 }
