@@ -27,9 +27,10 @@
         { "path": "registry/system13/input.tsx", "type": "registry:ui", "target": "@ui/system13-input.tsx" },
         { "path": "registry/system13/toggle.tsx", "type": "registry:ui", "target": "@ui/system13-toggle.tsx" },
         { "path": "registry/system13/switch.tsx", "type": "registry:ui", "target": "@ui/system13-switch.tsx" },
-        { "path": "registry/system13/menu-item.tsx", "type": "registry:ui", "target": "@ui/system13-menu-item.tsx" }
+        { "path": "registry/system13/menu-item.tsx", "type": "registry:ui", "target": "@ui/system13-menu-item.tsx" },
+        { "path": "registry/system13/primitives.tsx", "type": "registry:ui", "target": "@ui/system13-primitives.tsx" }
       ],
-      "docs": "Import ./system13.css from your app stylesheet or root layout after installation."
+      "docs": "Import ./system13.css from your app stylesheet or root layout after installation. Canonical design decisions are documented in docs/canonical-components.md."
     },
     {
       "name": "system-13-style",
@@ -78,6 +79,14 @@
       "description": "Navigation row with a square selection marker.",
       "registryDependencies": ["StarlessNight13/system-13/system-13-style"],
       "files": [{ "path": "registry/system13/menu-item.tsx", "type": "registry:ui", "target": "@ui/system13-menu-item.tsx" }]
+    },
+    {
+      "name": "system-13-primitives",
+      "type": "registry:ui",
+      "title": "System 13 Primitives",
+      "description": "Canonical System 13 structural primitives including panels, cards, status, pagination, breadcrumbs, alerts, code blocks, spinner, progress, avatar, KBD, and empty state.",
+      "registryDependencies": ["StarlessNight13/system-13/system-13-style"],
+      "files": [{ "path": "registry/system13/primitives.tsx", "type": "registry:ui", "target": "@ui/system13-primitives.tsx" }]
     }
   ]
 }
