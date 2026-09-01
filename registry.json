@@ -1,0 +1,65 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "system-13",
+  "homepage": "https://github.com/StarlessNight13/system-13",
+  "items": [
+    {
+      "name": "system-13",
+      "type": "registry:base",
+      "title": "System 13",
+      "description": "TUI-inspired System 13 design system base.",
+      "extends": "none",
+      "config": {
+        "style": "system-13",
+        "tsx": true,
+        "rsc": true,
+        "tailwind": { "baseColor": "zinc" },
+        "aliases": {
+          "components": "@/components",
+          "ui": "@/components/ui",
+          "lib": "@/lib",
+          "hooks": "@/hooks"
+        }
+      },
+      "registryDependencies": ["system-13-button", "system-13-input", "system-13-toggle", "system-13-switch", "system-13-menu-item"],
+      "files": [
+        { "path": "registry/system13/system13.css", "type": "registry:style", "target": "app/system13.css" }
+      ]
+    },
+    {
+      "name": "system-13-button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Bracket-border System 13 action button.",
+      "files": [{ "path": "registry/system13/button.tsx", "type": "registry:ui", "target": "components/ui/system13-button.tsx" }]
+    },
+    {
+      "name": "system-13-input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Square floating-label System 13 input.",
+      "files": [{ "path": "registry/system13/input.tsx", "type": "registry:ui", "target": "components/ui/system13-input.tsx" }]
+    },
+    {
+      "name": "system-13-toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "Bracket-border ON/OFF control.",
+      "files": [{ "path": "registry/system13/toggle.tsx", "type": "registry:ui", "target": "components/ui/system13-toggle.tsx" }]
+    },
+    {
+      "name": "system-13-switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Terminal rail switch with a moving block cursor.",
+      "files": [{ "path": "registry/system13/switch.tsx", "type": "registry:ui", "target": "components/ui/system13-switch.tsx" }]
+    },
+    {
+      "name": "system-13-menu-item",
+      "type": "registry:ui",
+      "title": "Menu Item",
+      "description": "Navigation row with a square selection marker.",
+      "files": [{ "path": "registry/system13/menu-item.tsx", "type": "registry:ui", "target": "components/ui/system13-menu-item.tsx" }]
+    }
+  ]
+}
