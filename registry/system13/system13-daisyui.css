@@ -1,0 +1,426 @@
+/*
+ * System 13 × daisyUI 5
+ *
+ * Structural adapter for plain HTML/CSS websites that use daisyUI.
+ * This file does not define or replace a daisyUI theme. It reads the active
+ * daisyUI color variables and changes component geometry, borders, motion,
+ * typography, and state treatment to match the System 13 design language.
+ *
+ * Load this file after daisyUI's generated/precompiled CSS.
+ */
+
+:where(:root, [data-theme]) {
+  --s13-daisy-background: var(--color-base-100);
+  --s13-daisy-surface: var(--color-base-100);
+  --s13-daisy-surface-2: var(--color-base-200);
+  --s13-daisy-foreground: var(--color-base-content);
+  --s13-daisy-border: color-mix(in oklab, var(--color-base-content) 24%, transparent);
+  --s13-daisy-muted: color-mix(in oklab, var(--color-base-content) 58%, transparent);
+  --s13-daisy-accent: var(--color-primary);
+  --s13-daisy-transition: 140ms ease;
+  --s13-daisy-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+.btn,
+.input,
+.select,
+.textarea,
+.file-input,
+.checkbox,
+.radio,
+.toggle,
+.range,
+.badge,
+.kbd,
+.tab,
+.menu,
+.table,
+.label,
+.fieldset-legend,
+.stat-title,
+.stat-value,
+.stat-desc {
+  font-family: var(--s13-daisy-font-mono);
+}
+
+.btn,
+.input,
+.select,
+.textarea,
+.file-input,
+.checkbox,
+.radio,
+.toggle,
+.range,
+.badge,
+.card,
+.alert,
+.modal-box,
+.collapse,
+.stats,
+.stat,
+.menu,
+.list,
+.list-row,
+.tabs,
+.tab,
+.kbd,
+.skeleton,
+.tooltip-content,
+.dropdown-content,
+.join,
+.join-item {
+  border-radius: 0;
+}
+
+.btn,
+.input,
+.select,
+.textarea,
+.file-input,
+.checkbox,
+.radio,
+.toggle,
+.range,
+.card,
+.alert,
+.modal-box,
+.collapse,
+.stats,
+.menu,
+.kbd,
+.dropdown-content {
+  box-shadow: none;
+  background-image: none;
+}
+
+/* Buttons: keep daisyUI sizing/colors/variants, replace the structural language. */
+.btn {
+  position: relative;
+  transition-duration: 140ms;
+  transition-timing-function: ease;
+}
+
+.btn:not(.btn-link):not(.btn-ghost):not(.btn-outline):not(.btn-dash) {
+  border-color: transparent;
+}
+
+.btn:not(.btn-link):not(.btn-ghost):not(.btn-outline):not(.btn-dash)::before,
+.btn:not(.btn-link):not(.btn-ghost):not(.btn-outline):not(.btn-dash)::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  width: 0.5rem;
+  border-block: 1px solid currentColor;
+  pointer-events: none;
+  transition:
+    width var(--s13-daisy-transition),
+    border-color var(--s13-daisy-transition);
+}
+
+.btn:not(.btn-link):not(.btn-ghost):not(.btn-outline):not(.btn-dash)::before {
+  inset-inline-start: 0;
+  border-inline-start: 1px solid currentColor;
+}
+
+.btn:not(.btn-link):not(.btn-ghost):not(.btn-outline):not(.btn-dash)::after {
+  inset-inline-end: 0;
+  border-inline-end: 1px solid currentColor;
+}
+
+@media (hover: hover) {
+  .btn:not(.btn-link):not(.btn-ghost):not(.btn-outline):not(.btn-dash):hover::before,
+  .btn:not(.btn-link):not(.btn-ghost):not(.btn-outline):not(.btn-dash):hover::after {
+    width: 0.75rem;
+  }
+}
+
+.btn:focus-visible {
+  outline: 1px solid var(--s13-daisy-accent);
+  outline-offset: 3px;
+}
+
+.btn:active:not(:disabled, .btn-disabled) {
+  transform: none;
+  translate: 0;
+}
+
+.btn-outline,
+.btn-dash {
+  box-shadow: none;
+}
+
+.btn-ghost:hover {
+  background-color: color-mix(in oklab, var(--s13-daisy-accent) 10%, transparent);
+}
+
+.btn-link {
+  text-underline-offset: 0.25rem;
+}
+
+/* Form fields: square 1px frames with fast, functional focus motion. */
+.input,
+.select,
+.textarea,
+.file-input {
+  box-shadow: none;
+  transition:
+    border-color var(--s13-daisy-transition),
+    outline-color var(--s13-daisy-transition),
+    background-color var(--s13-daisy-transition);
+}
+
+.input:focus,
+.input:focus-within,
+.select:focus,
+.textarea:focus,
+.file-input:focus-within {
+  box-shadow: none;
+  outline-width: 1px;
+  outline-offset: 2px;
+}
+
+/* Checkbox/radio: square frame and square state core. */
+.checkbox,
+.radio {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+}
+
+.checkbox:checked,
+.checkbox[aria-checked="true"],
+.radio:checked,
+.radio[aria-checked="true"] {
+  background-color: transparent;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 42% 42%;
+}
+
+.checkbox:focus-visible,
+.radio:focus-visible,
+.toggle:focus-visible {
+  outline-width: 1px;
+  outline-offset: 3px;
+}
+
+/* Toggle: keep daisyUI's state behavior, make the pill a terminal cursor rail. */
+.toggle {
+  border-inline: 0;
+  border-block: 1px solid currentColor;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.toggle::before {
+  border-radius: 0;
+  box-shadow: none;
+  background-image: none;
+}
+
+.toggle:checked,
+.toggle[aria-checked="true"],
+.toggle:has(> input:checked) {
+  background-color: transparent;
+}
+
+/* Range: thin rail and square block thumb. */
+.range {
+  border-radius: 0;
+}
+
+.range::-webkit-slider-thumb {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.range::-moz-range-thumb {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Tabs: one rail, flat labels, active state communicated by a short lower rail. */
+.tabs {
+  gap: 0.125rem;
+  border-bottom: 1px solid var(--s13-daisy-border);
+  background: transparent;
+}
+
+.tab {
+  border-radius: 0;
+  background: transparent;
+  transition:
+    color var(--s13-daisy-transition),
+    box-shadow var(--s13-daisy-transition);
+}
+
+.tab:is(
+  .tab-active,
+  :checked,
+  [aria-selected="true"],
+  [aria-current="true"],
+  [aria-current="page"]
+) {
+  box-shadow: inset 0 -3px 0 var(--s13-daisy-accent);
+}
+
+.tabs-box,
+.tabs-lift,
+.tabs-border {
+  border-radius: 0;
+  background: transparent;
+}
+
+/* Cards/panels: restrained square frames with no floating-card shadow. */
+.card,
+.modal-box,
+.collapse,
+.stats {
+  border: 1px solid var(--s13-daisy-border);
+  box-shadow: none;
+}
+
+.card {
+  transition: border-color var(--s13-daisy-transition);
+}
+
+@media (hover: hover) {
+  .card:hover {
+    border-color: color-mix(in oklab, var(--s13-daisy-accent) 75%, var(--s13-daisy-border));
+  }
+}
+
+.modal-box {
+  box-shadow: none;
+}
+
+/* Alerts: keep daisyUI semantic colors, remove rounded/depth effects. */
+.alert {
+  box-shadow: none;
+  background-image: none;
+  border-width: 1px;
+}
+
+/* Badges become compact System 13 status labels. */
+.badge {
+  position: relative;
+  min-height: 1.5rem;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.badge:not(.badge-outline, .badge-dash)::before,
+.badge:not(.badge-outline, .badge-dash)::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  width: 0.3rem;
+  border-block: 1px solid currentColor;
+  pointer-events: none;
+}
+
+.badge:not(.badge-outline, .badge-dash)::before {
+  inset-inline-start: 0;
+  border-inline-start: 1px solid currentColor;
+}
+
+.badge:not(.badge-outline, .badge-dash)::after {
+  inset-inline-end: 0;
+  border-inline-end: 1px solid currentColor;
+}
+
+/* Tables: visible grid structure instead of floating rows. */
+.table {
+  border: 1px solid var(--s13-daisy-border);
+  border-collapse: collapse;
+}
+
+.table :where(th, td) {
+  border: 1px solid var(--s13-daisy-border);
+}
+
+.table :where(th) {
+  font-family: var(--s13-daisy-font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Menus/lists: square rows and a structural selection rail. */
+.menu {
+  border: 1px solid var(--s13-daisy-border);
+}
+
+.menu :where(li > *, li > details > summary),
+.list-row {
+  border-radius: 0;
+}
+
+.menu :where(
+  .active,
+  [aria-current="page"],
+  [aria-selected="true"]
+) {
+  box-shadow: inset 3px 0 0 var(--s13-daisy-accent);
+}
+
+/* Keyboard and skeleton primitives. */
+.kbd {
+  border: 1px solid var(--s13-daisy-border);
+  border-bottom-width: 3px;
+  box-shadow: none;
+}
+
+.skeleton {
+  border: 1px solid var(--s13-daisy-border);
+  background-color: color-mix(in oklab, var(--s13-daisy-accent) 8%, var(--color-base-200));
+}
+
+/* Progress becomes a discrete cell strip where browser support permits it. */
+.progress {
+  border-radius: 0;
+  background-color: transparent;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--s13-daisy-border) 0 0.75rem,
+    transparent 0.75rem 1rem
+  );
+}
+
+.progress::-webkit-progress-bar {
+  background: transparent;
+}
+
+.progress::-webkit-progress-value {
+  border-radius: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--s13-daisy-accent) 0 0.75rem,
+    transparent 0.75rem 1rem
+  );
+}
+
+.progress::-moz-progress-bar {
+  border-radius: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--s13-daisy-accent) 0 0.75rem,
+    transparent 0.75rem 1rem
+  );
+}
+
+/* Common containers should not reintroduce SaaS-style rounding/depth. */
+.navbar,
+.footer {
+  box-shadow: none;
+}
+
+.divider::before,
+.divider::after {
+  height: 1px;
+}
+
+:where(.btn, .input, .select, .textarea, .file-input, .checkbox, .radio, .toggle, .tab, .menu a, .menu button):disabled {
+  cursor: not-allowed;
+}
