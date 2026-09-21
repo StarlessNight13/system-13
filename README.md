@@ -162,6 +162,43 @@ npx shadcn@latest add StarlessNight13/system-13/system-13-daisyui
 
 That command is only a distribution convenience. The resulting file is plain CSS and has no React dependency.
 
+
+## CSS releases
+
+GitHub Actions publishes `registry/system13/system13-daisyui.css` as a release asset named `system13-daisyui.css`.
+
+For websites that want the latest released CSS instead of tracking `main`, use:
+
+```html
+<link
+  href="https://github.com/StarlessNight13/system-13/releases/latest/download/system13-daisyui.css"
+  rel="stylesheet"
+/>
+```
+
+### Create a release with a tag
+
+Create and push a semantic version tag:
+
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+The `Release CSS` GitHub Actions workflow creates the GitHub Release, generates release notes, and attaches `system13-daisyui.css`.
+
+### Create a release manually
+
+Open the repository on GitHub, go to **Actions → Release CSS → Run workflow**, and enter a version tag such as:
+
+```text
+v0.1.0
+```
+
+If the tag does not exist, the workflow creates the release and tag from the selected branch commit. If the release already exists, the workflow replaces its CSS asset.
+
+Release tags must start with `v` and use semantic-version style numbering, for example `v0.1.0` or `v0.2.0-beta.1`.
+
 ## Design principle
 
 **Text communicates meaning. Structure communicates state.**
